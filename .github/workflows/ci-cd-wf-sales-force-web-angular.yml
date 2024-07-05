@@ -22,5 +22,5 @@ jobs:
       - uses: actions/setup-node@v3
         name: 🔧 Setup Node
         with:
-          node-version: 16
+          node-version: 14
           cache: 'npm'

@@ -1,0 +1,26 @@
+on:
+  workflow_call:
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
+  id-token: write
+  issues: write
+  packages: write
+  repository-projects: read
+  pull-requests: write
+jobs:
+  sonarCloud:
+    name: 📝 Test & 🔍 Quality
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v4
+        name: ✅ Checkout
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        name: 🔧 Setup Node
+        with:
+          node-version: 16
+          cache: 'npm'

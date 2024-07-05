@@ -23,4 +23,3 @@ jobs:
         name: 🔧 Setup Node
         with:
           node-version: 14
-          cache: 'npm'
